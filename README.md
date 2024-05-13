@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# Utilidades para pptxgen
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La función `addRowOfElements` es una función de utilidad que permite agregar una fila de elementos a una diapositiva. Los elementos pueden ser imágenes, texto, formas o elementos personalizados. La función distribuye uniformemente el ancho de la fila entre los elementos.
 
-## Available Scripts
+La función toma un objeto de opciones como parámetro, que incluye:
 
-In the project directory, you can run:
+- `slide`: La diapositiva a la que se agregarán los elementos.
+- `pageSize`: El tamaño de la página, que incluye el ancho y la altura.
+- `elements`: Un array de los elementos que se agregarán a la fila. Cada elemento es un objeto que incluye el tipo de elemento (`image`, `text`, `shape`, `custom`) y las opciones específicas del elemento.
+- `y`: La coordenada y de la fila. Por defecto es 0.
+- `customheight`: La altura personalizada de los elementos. Por defecto es 0.
+- `gap`: El espacio entre los elementos. Por defecto es 0.
 
-### `yarn start`
+La función calcula el ancho de cada columna en la fila y luego itera sobre los elementos, agregándolos a la diapositiva en la posición correcta y con el ancho correcto. Para los elementos personalizados, la función llama a la función del elemento con la diapositiva, el tamaño de la página, la posición y el tamaño del elemento como argumentos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Finalmente, la función devuelve un objeto que contiene la diapositiva actualizada, el ancho de la columna y las posiciones de los elementos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div align="center">
+  <img src="./examples/1.png" />
+</div>
